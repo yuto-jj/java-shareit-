@@ -1,6 +1,5 @@
 package ru.practicum.user;
 
-import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.ValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -51,7 +50,7 @@ class UserServiceImpl implements UserService {
         repository.delete(id);
     }
 
-    private void validationForNewUser (UserDto user) {
+    private void validationForNewUser(UserDto user) {
         if (repository.containsEmail(user.getEmail())) {
             throw new ConflictException("The user with this email already exists.");
         }
