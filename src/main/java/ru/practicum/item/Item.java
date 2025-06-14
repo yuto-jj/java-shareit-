@@ -1,13 +1,16 @@
 package ru.practicum.item;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 
 @Data
+@Builder
 public class Item {
     private Long id;
     private Long userId;
-    private String url;
     private String name;
     private String description;
-    private ItemStatus status;
+    @Getter
+    private Boolean available;
 }
